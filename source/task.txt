@@ -1,0 +1,36 @@
+Args task:
+*创建一个测试用例 loggerArgsTest：-l -> 查询参数 quearyArg(l) 返回bool True
+	**解析参数结构
+		"l, Boolean, true;p, Integer, 0;d, String, "
+	**创建ArgsTest
+	**创建测试用例 parseSchemaTest 查询解析后的结果，返回符合参数结构
+		***创建类ArgsProcessor.parseSchema
+		***解析参数到对象
+		***通过测试
+	**解析输入参数"-l"
+		***创建parseArgs()解析参数
+		***创建quearyArgs()
+	**通过测试
+*创建测试用例 loggerArgsWithoutL: ->  查询参数l返回 bool False
+	**解析“”
+	**修改parseArgs() 通过测试
+*创建测试用例 portArgsWithValidInput：-p 8080-> 查询参数p返回整数类型8080
+	**解析 “-p 8080”
+	**修改parse方法，通过过测试。
+*创建测试用例 portArgsWithValidInput：-l -p 8080-> 查询参数p返回整数类型8080 查询l 返回true
+	**解析“-l -p 8080”
+	**修改parse方法，通过过测试。
+*创建测试用例 loggerArgsWithoutP: ->  查询参数p返回 Integer 0
+	**解析“-l -p 8080”
+	**修改parse方法，通过过测试。
+*创建测试用例 portArgsWithInvalidInput: -p abc -> parse(string inputArgs)方法返回字符串“ -p <port number>, please put correct port number”
+	**修改测试用例，通过测试。
+*创建测试用例 portArgsWithEmptyValue：-p -> 查询参数p返回整数类型8080
+	**修改代码，通过测试
+*创建测试用例directoryWithValideInput: -d /usr/logs->查询参数d返回String “/usr/logs”
+	**修改代码，通过测试
+*创建测试用例 directoryWithoutD: ->  查询参数d返回 String ""
+*创建测试用例directoryWithinvalideInput -d :"? ->parse(string inputArgs)方法返回 “ -d <directory>, please put correct directory path”
+	**修改代码，通过测试
+*创建测试用例 allInputValid -l -p 9090 -d /usr/logs->查询参数 l 返回true，查询参数p 返回 9090，查询参数 d 返回 logs
+	**修改代码，通过测试
